@@ -1,5 +1,5 @@
 import { LoginService } from './../../../services/login.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
 
   constructor(private fb : FormBuilder,private loginservice: LoginService,private router: Router) { }
+
   ngOnInit() {
     this.loginform = this.fb.group({
       Username : [{value:"",disabled:false},],
@@ -37,6 +38,12 @@ export class NavbarComponent implements OnInit {
   {
     return this.loginservice.loggedIn();
    
+  }
+  logout()
+  {
+    this.router.navigate([]),{ queryParams: { Username: null} };
+    return this.loginservice.loggOut();
+    
   }
 
 }

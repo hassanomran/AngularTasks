@@ -1,3 +1,4 @@
+import { LoginComponent } from './shared-components/Components/Login/Login/Login.component';
 import { WelcomeComponent } from './shared-components/Components/welcome-page/welcome/welcome.component';
 import { LoginService } from './shared-components/services/login.service';
 import { NgModule } from '@angular/core';
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     declarations: [
         AppComponent,
         NavbarComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        LoginComponent
     ],
     providers: [LoginService],
     bootstrap: [AppComponent],

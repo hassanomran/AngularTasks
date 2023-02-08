@@ -24,6 +24,8 @@
         <button class="btn btn-success" type="submit">Login</button>
       </form>
     </div>
+    <div  *ngIf="!loggedIn()"><button class="btn btn-danger" type="button"   (click)="logout()">LogOut</button>
+    </div>
   </div>
 </nav>
 
